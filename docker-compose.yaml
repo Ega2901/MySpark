@@ -1,0 +1,10 @@
+services:
+  jupyter-notebook-service:
+    container_name: jupyter-notebook-container
+    image: jupyter/pyspark-notebook:latest
+    platform: linux/amd64
+    volumes:
+      - "./mySpark/sparkdata:/sparkdata"
+      - "./mySpark/work:/home/jovyan/work"
+    ports:
+      - "8888:8888"
